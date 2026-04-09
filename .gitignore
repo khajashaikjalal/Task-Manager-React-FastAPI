@@ -1,0 +1,12 @@
+# Backend Python Files
+backend/__pycache__/
+backend/venv/
+backend/tasks.db
+
+# Frontend React Files
+frontend/node_modules/
+frontend/dist/
+
+# OS Files
+.DS_Store
+Thumbs.db

@@ -1,0 +1,211 @@
+.app-container {
+  width: 100%;
+  min-width: 450px;
+  max-width: 600px;
+  padding: 20px;
+}
+
+/* Glassmorphism Panel */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+/* Header */
+.app-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.app-header h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin: 0;
+  background: linear-gradient(to right, #00c6ff, #0072ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+.app-header p {
+  color: #aeb2cc;
+  margin-top: 5px;
+  font-size: 1.1rem;
+}
+
+/* Task Form */
+.task-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+.task-input {
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 15px;
+  border-radius: 10px;
+  color: white;
+  font-size: 1rem;
+  outline: none;
+  font-family: inherit;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+.task-input:focus {
+  border-color: #00c6ff;
+  box-shadow: 0 0 10px rgba(0, 198, 255, 0.3);
+}
+.task-input.description {
+  font-size: 0.9rem;
+  color: #aeb2cc;
+}
+.task-submit-btn {
+  background: linear-gradient(to right, #00c6ff, #0072ff);
+  color: white;
+  border: none;
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  font-family: inherit;
+}
+.task-submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 114, 255, 0.4);
+}
+.task-submit-btn:active {
+  transform: translateY(0);
+}
+
+/* Task List */
+.task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.empty-state {
+  text-align: center;
+  color: #aeb2cc;
+  font-style: italic;
+  padding: 20px 0;
+}
+
+/* Task Item */
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 15px 20px;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  border-left: 4px solid #00c6ff;
+}
+.task-item:hover {
+  background: rgba(255, 255, 255, 0.12);
+  transform: translateX(5px);
+}
+.task-item.completed {
+  border-left-color: #00d2ff;
+  opacity: 0.5;
+}
+.task-item.completed h3 {
+  text-decoration: line-through;
+  color: #aeb2cc;
+}
+.task-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  flex: 1;
+}
+.task-text {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+.task-text h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+.task-text p {
+  margin: 5px 0 0 0;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Custom Checkbox */
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  width: 25px;
+  height: 25px;
+  margin-top: 2px;
+}
+.checkbox-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border: 2px solid rgba(255,255,255,0.3);
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+.checkbox-container:hover input ~ .checkmark {
+  border-color: #00c6ff;
+}
+.checkbox-container input:checked ~ .checkmark {
+  background-color: #00c6ff;
+  border-color: #00c6ff;
+}
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+  left: 7px;
+  top: 2px;
+  width: 6px;
+  height: 12px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+}
+.checkbox-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Delete Button */
+.delete-btn {
+  background: transparent;
+  color: rgba(255,255,255,0.4);
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  padding: 10px;
+  border-radius: 50%;
+}
+.delete-btn:hover {
+  color: #ff4757;
+  background: rgba(255, 71, 87, 0.1);
+  transform: scale(1.1);
+}

@@ -1,0 +1,6 @@
+@echo off
+echo Starting Backend (FastAPI)...
+start cmd /k "cd backend && python -m uvicorn main:app --reload"
+
+echo Starting Frontend (React/Vite)...
+start cmd /k "cd frontend && set PATH=%PATH%;C:\Program Files\nodejs && npm run dev"
